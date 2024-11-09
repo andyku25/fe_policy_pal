@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: DockerFile.dev
+    image: localhost/web-dev:latest
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - WATCHPACK_POLLING=true
+      - REACT_APP_API_URL=http://localhost:8000
+      - BROWSER=none
+      - CI=true
+      - CHOKIDAR_USEPOLLING=true
+    networks:
+      - policy_pal_default
+
+networks:
+  policy_pal_default:
+    external: true

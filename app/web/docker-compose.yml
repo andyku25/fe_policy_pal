@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: localhost/web:latest
+    ports:
+      - "80:80"
+    networks:
+      - policy_pal_default
+
+networks:
+  policy_pal_default:
+    external: true

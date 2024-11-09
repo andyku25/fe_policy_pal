@@ -1,0 +1,23 @@
+# Build the React app using Node v22.11.0
+FROM docker.io/node:22.11.0 AS development
+
+# Set working directory inside container
+WORKDIR /app
+
+# Copy package.json and yarn.lock for yarn install
+COPY package.json yarn.lock ./
+
+# Install dependencies
+RUN yarn install
+
+# Set environment variables
+ENV BROWSER=none
+ENV CI=true
+ENV CHOKIDAR_USEPOLLING=true
+ENV WATCHPACK_POLLING=true
+
+# Expose port 3000 for the React and start the app
+EXPOSE 3000
+CMD ["yarn", "start"] 
+
+
