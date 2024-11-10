@@ -11,7 +11,7 @@ export default function Header() {
 
   const navItems = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { name: 'Dashboard', href: '/dashboard' },
     { name: 'Services', href: '/services' },
     { name: 'Contact', href: '/contact' },
   ]
@@ -23,13 +23,13 @@ export default function Header() {
           {/* Logo */}
           <div className="flex justify-start lg:w-0 lg:flex-1">
             <Link to="/" className="flex items-center">
-              <span className="sr-only">Your Company</span>
+              <span className="sr-only">Policy Pal</span>
               <img
                 className="h-8 w-auto sm:h-10"
                 src="/placeholder.svg?height=40&width=40"
                 alt="Logo"
               />
-              <span className="ml-2 text-xl font-bold text-gray-900">Your Company</span>
+              <span className="ml-2 text-xl font-bold text-gray-900">Policy Pal</span>
             </Link>
           </div>
 
